@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "2cfb978f-32a6-4db4-b8d2-460a55f9d388",
+		"name": "Cooking Registration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9555276"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"paolo.rossi@tim.it\",\r\n  \"password\": \"super.S4cure.Passw0rd\",\r\n  \"name\": \"paolo\",\r\n  \"surname\": \"rossi\",\r\n  \"age:\": 33,\r\n  \"use2fa\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_host}}/auth/registration",
+					"host": [
+						"{{base_host}}"
+					],
+					"path": [
+						"auth",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"paolo.rossi@tim.it\",\r\n  \"password\": \"super.S4cure.Passw0rd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_host}}/auth/login",
+					"host": [
+						"{{base_host}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2fa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"request_id\": \"3c9bc1e5-d22e-4590-bc54-ff415255367b\",\r\n  \"otp\": \"8DZ0CD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_host}}/auth/2fa",
+					"host": [
+						"{{base_host}}"
+					],
+					"path": [
+						"auth",
+						"2fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTY5Njc3NiwianRpIjoiOTI2NWE0MzEtMjJkNi00ZThlLWJmZDAtNjkzMmIzZjAzMWY3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzMxNjk2Nzc2LCJjc3JmIjoiMTEwZmMzZTQtYTM5ZC00MWY3LTkzNzgtMjk3NDQ1ZGZjYWVkIiwiZXhwIjoxNzMxNzAwMzc2fQ.28lNiXxaJuZSFJYkSMLEuG4DCOWnKKRwRzHPElJWnPU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_host}}/users",
+					"host": [
+						"{{base_host}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTY5Njc0NSwianRpIjoiNGIwZDQ3MmYtZWFjMi00N2U1LWE3YTQtOGViY2EyY2IzNTc3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzMxNjk2NzQ1LCJjc3JmIjoiZDNmMWZmOGMtYWViYS00NWYwLWE0ZGMtNTcxNmM3NDFhZWNiIiwiZXhwIjoxNzMxNzAwMzQ1fQ.7eTtO0keaRgq2hYfCsvdrsPDfQC9HYCnOCOWKr6JmiE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_host}}/users/me",
+					"host": [
+						"{{base_host}}"
+					],
+					"path": [
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
